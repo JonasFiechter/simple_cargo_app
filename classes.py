@@ -10,7 +10,7 @@ class RunOnDatabase:  # contains methods that works with the database
         self.driver_name = driver_name
         self.date = date
         self.path = data_path
-        self.connection = sqlite3.connect(self.path)
+        self.connection = sqlite3.connect(r'D:\12 - MY DOCS\DEV\Dev\simple_cargo_register\database.db')
         self.cursor = self.connection.cursor()
     
     def check_for_table(self):  # check for table if it exist, if not creates one     
@@ -33,7 +33,6 @@ class RunOnDatabase:  # contains methods that works with the database
                         (self.id_container, self.plate_code, self.driver_name, date))
         
         self.connection.commit()
-        print(f'btn_submit working')
     
     def search_on_database(self):
         self.check_for_table()
@@ -41,10 +40,13 @@ class RunOnDatabase:  # contains methods that works with the database
                             'plate_code LIKE ? OR '
                             'driver_name LIKE ? OR '
                             'date LIKE ?',
-                                        (f'%{str(self.id_container)}%',
+                                        (
+                                        f'%{str(self.id_container)}%',
                                         f'%{str(self.plate_code)}%',
                                         f'%{str(self.driver_name)}%',
-                                        f'%{str(self.date)}%'))
+                                        f'%{str(self.date)}%'
+                                        )
+                                    )
         search_data_list = []
         
         for row in self.cursor.fetchall():
@@ -71,14 +73,13 @@ class RunOnDatabase:  # contains methods that works with the database
         self.check_for_table()
         self.cursor.execute('DELETE FROM register WHERE id LIKE ?', (id_,))
         self.connection.commit()
-        print('btn delete works')
 
 class RunOnPrint:
     def __init__(self) -> None:
         pass
 
     def send_to_printer(self):
-        print('btn_print_working')
+        print('BTN PRINTER WORKING')
 
 
 if __name__ == '__main__':
