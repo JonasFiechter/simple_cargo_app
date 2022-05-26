@@ -19,7 +19,7 @@ class RunOnDatabase:  # contains methods that works with the database
                         'id_container TEXT,'
                         'plate_code TEXT,'
                         'driver_name TEXT,'
-                        'date TEXT'
+                        'date TEXT,'
                         ')')
         self.connection.commit()
 
