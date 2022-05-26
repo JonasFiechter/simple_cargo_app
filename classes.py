@@ -10,7 +10,7 @@ class RunOnDatabase:  # contains methods that works with the database
         self.driver_name = driver_name
         self.date = date
         self.path = data_path
-        self.connection = sqlite3.connect(r'D:\12 - MY DOCS\DEV\Dev\simple_cargo_register\database.db')
+        self.connection = sqlite3.connect(r'C:\Users\USER\Documents\GitHub\simple_cargo_app\database.db')
         self.cursor = self.connection.cursor()
     
     def check_for_table(self):  # check for table if it exist, if not creates one     

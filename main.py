@@ -1,7 +1,7 @@
 import sys
 from window import Ui_MainWindow
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QDialog, QInputDialog, QMessageBox
+from PyQt5.QtWidgets import *
 from classes import RunOnDatabase, RunOnPrint
 from widget_save import Ui_WidgetSave
 
@@ -119,6 +119,7 @@ if __name__ == '__main__':
     window = MainWindowMain()
     window.show()
     pop_up_submit = PopUpSubmit()
-    widget_save = WidgetSave()  # the variable that keeps the widget class must be inside this loop
+    # the variable that keeps the widget class must be inside this loop
+    widget_save = WidgetSave()  
 
     qt.exec_()
