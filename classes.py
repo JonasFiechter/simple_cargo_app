@@ -19,8 +19,8 @@ class RunOnDatabase:  # contains methods that works with the database
                         'id_container TEXT,'
                         'plate_code TEXT,'
                         'driver_name TEXT,'
-                        'date TEXT,'
-                        ')')
+                        'date TEXT)')
+
         self.connection.commit()
 
     def save_on_database(self):  # save received data from main.py and actual date on database
