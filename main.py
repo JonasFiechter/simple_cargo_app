@@ -1,6 +1,5 @@
 import sys
 from window import Ui_MainWindow
-from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from classes import RunOnDatabase, RunOnPrint
 from widget_save import Ui_WidgetSave
@@ -44,7 +43,7 @@ class MainWindowMain(Ui_MainWindow, QMainWindow):
 
         for n, list_ in enumerate(data_list):
             for n_2, row in enumerate(list_):
-                self.tableWidget.setItem(n, n_2, QtWidgets.QTableWidgetItem(str(row)))
+                self.tableWidget.setItem(n, n_2, QTableWidgetItem(str(row)))
         data.close_cursor_and_connection()
 
     def show_submit_pop_up(self, id_container, plate_code, driver_name):
@@ -99,7 +98,7 @@ class WidgetSave(Ui_WidgetSave, QWidget):
         
         for n, list_ in enumerate(data_search):
             for n_2, row in enumerate(list_):
-                window.tableWidget.setItem(n, n_2, QtWidgets.QTableWidgetItem(str(row)))
+                window.tableWidget.setItem(n, n_2, QTableWidgetItem(str(row)))
         
         self.input_id_container.setText('ID_CONTAINER')
         self.input_plate_code.setText('PLATE_CODE')
